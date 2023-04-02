@@ -1,5 +1,5 @@
-from curses.ascii import isdigit
-# from pip._vendor import requests
+from pip._vendor import requests
+import json
 import re
 
 def main():
@@ -7,6 +7,8 @@ def main():
     month, day = get_DOB(s)
     sign = get_sign(month, day)
     print(f"You're a {sign}!")
+    print()
+    get_horoscope(sign)
 
 
 def get_DOB(s):
@@ -117,8 +119,23 @@ def get_sign(month, day):
 
 
 def get_horoscope(sign):
-    ...
+    day = "today"
+    URL = f"http://127.0.0.1:5000/api/v1/get-horoscope/daily"
 
+    PARAMS = {"sign": sign, "day": day}
+
+    response = requests.get(url = URL, params=PARAMS)
+    
+    data = response.json()
+
+    data = data["data"].split("- ")
+    print(data[0], end=":\n")
+    print()
+
+    for line in data[1].split(". "):
+        print(f"    {line}", end=".\n")
+    
+    print()
 
 if __name__ == "__main__":
     main()
