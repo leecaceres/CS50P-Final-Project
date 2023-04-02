@@ -3,23 +3,23 @@ from curses.ascii import isdigit
 import re
 
 def main():
-    month, day = get_DOB()
-    print(get_sign(month, day))
-    # get_horoscope(get_sign(month, day))
-
-def get_DOB():
-
     s = input("What is your birthday? ").strip()
+    month, day = get_DOB(s)
+    sign = get_sign(month, day)
+    print(f"You're a {sign}!")
+
+
+def get_DOB(s):
 
     # mm/dd/yy or mm/dd/yyyy
-    if matches := re.search(r"^(\d{1,2})/(\d{1,2})(/\d{2}|\d{4})?$", s):
+    if matches := re.search(r"^(\d{1,2})/(\d{1,2})(?:/)?(\d{2}|\d{4})?$", s):
         month = int(matches.group(1))
         day = int(matches.group(2))
 
         return check_DOB(month, day)
             
     # month dd, yyyy
-    if matches := re.search(r"^(\w+) (\d{1,2})(,? \d{4})?$", s, re.IGNORECASE):
+    if matches := re.search(r"^(\w+) (\d{1,2})(?:st|nd|rd|th)?(,? \d{4})?$", s, re.IGNORECASE):
         month = matches.group(1).title()
         day = int(matches.group(2))
 
@@ -31,6 +31,7 @@ def get_DOB():
         day = int(matches.group(1))
 
         return check_DOB(month, day)
+
 
 def check_DOB(month, day):
     months = [
@@ -114,8 +115,10 @@ def get_sign(month, day):
 
     raise ValueError("DOB/Sign not matched")
 
+
 def get_horoscope(sign):
     ...
+
 
 if __name__ == "__main__":
     main()
