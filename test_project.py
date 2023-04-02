@@ -1,10 +1,10 @@
-import project
+from project import get_DOB, check_DOB, get_sign
 
-def test_func1():
+def test_get_DOB():
     ...
 
-def test_func2():
+def test_check_DOB():
     ...
 
-def test_func3():
+def test_get_sign():
     ...
