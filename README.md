@@ -1,11 +1,11 @@
 # CS50P-Final-Project
 
-## Program that uses an API to tell user their horoscope based on their birth month and day.
+## Program that uses an API to tell users their horoscope based on their birth month and day.
 
 ### Input:
 User inputs their date of birth (**dob**). Used **regex** to allow multiple date formats:
 - variations of *mm/dd/yyyy*
-- variationf of *month dd, yyyy*
+- variations of *month dd, yyyy*
 - variations of *dd month yyyy*
 
 ### Functionality:
@@ -30,4 +30,4 @@ Then a **JSON object** of the response is returned and iterated through to find 
 ### Output:
 - The user's **sign** printed using ascii art (*Pyfiglet*).
 - The **date range** the user chose and the user's astrological **symbol** are printed.
-- The **horoscope** corresponding to the user's sign and chose date range is printed.
+- The **horoscope** corresponding to the user's sign and chosen date range is printed.
