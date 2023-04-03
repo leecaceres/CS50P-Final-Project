@@ -1,5 +1,5 @@
 import pytest
-from project import get_DOB, check_DOB, get_sign
+from project import get_DOB, check_DOB, get_endpoint_type, get_sign, get_day, print_sign,get_daily_horoscope, get_weekly_horoscope, get_monthly_horoscope
 
 def test_get_DOB():
     assert get_DOB("05/13/2003") == ("May", 13)
@@ -26,8 +26,32 @@ def test_check_DOB():
     with pytest.raises(ValueError):
         check_DOB(13, 1)
     
-    
+
+def test_get_endpoint_type():
+    ...    
+
+
 def test_get_sign():
     assert get_sign("May", 13) == "Taurus"
     assert get_sign("August", 13) == "Leo"
     assert get_sign("November", 13) == "Scorpio"
+
+
+def test_get_day():
+    ...
+
+
+def test_print_sign():
+    ...
+
+    
+def test_get_daily_horoscope():
+    ...
+
+
+def test_get_weekly_horoscope():
+    ...
+
+
+def test_get_monthly_horoscope():
+    ...
