@@ -23,17 +23,17 @@ def main():
         print("--------------------------------------------")
         print()
         day = get_day(d)
-        print_sign(sign)
+        print(print_sign(sign))
         get_daily_horoscope(sign, symbol, day)
 
     elif option == 2:
         print()
-        print_sign(sign)
+        print(print_sign(sign))
         get_weekly_horoscope(sign, symbol)
 
     elif option == 3:
         print()
-        print_sign(sign)
+        print(print_sign(sign))
         get_weekly_horoscope(sign, symbol)
 
 
@@ -182,7 +182,7 @@ def get_day(day):
 def print_sign(sign):
     # Print astrological sign using ascii art
     result = pyfiglet.figlet_format(f"{sign}!")
-    print(result)
+    return result
 
 
 def get_daily_horoscope(sign, symbol, day):
