@@ -1,3 +1,4 @@
 pip install requests
 pip install regex
+pip install pyfiglet
 pip install json
