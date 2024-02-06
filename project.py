@@ -186,8 +186,8 @@ def print_sign(sign):
 
 
 def get_daily_horoscope(sign, symbol, day):
-    # URL and PARAMS
-    URL = f"http://127.0.0.1:5000/api/v1/get-horoscope/daily"
+    # URL and PARAMS – uncomment line below and insert IP Address
+    # URL = f"http://[insert local IP Address]/api/v1/get-horoscope/daily"
     PARAMS = {"sign": sign, "day": day}
 
     # GET request daily horoscope
@@ -208,8 +208,8 @@ def get_daily_horoscope(sign, symbol, day):
 
 
 def get_weekly_horoscope(sign, symbol):
-    # URL and PARAMS
-    URL = f"http://127.0.0.1:5000/api/v1/get-horoscope/weekly"
+    # URL and PARAMS – uncomment line below and insert IP Address
+    # URL = f"http://[insert local IP Address]/api/v1/get-horoscope/weekly"
     PARAMS = {"sign": sign}
 
     # GET request weekly horoscope
@@ -230,8 +230,8 @@ def get_weekly_horoscope(sign, symbol):
 
 
 def get_monthly_horoscope(sign, symbol):
-    # URL and PARAMS
-    URL = f"http://127.0.0.1:5000/api/v1/get-horoscope/monthly"
+    # URL and PARAMS – uncomment line below and insert IP Address
+    # URL = f"http://[insert local IP Address]/api/v1/get-horoscope/monthly"
     PARAMS = {"sign": sign}
 
     # GET request monthly horoscope
